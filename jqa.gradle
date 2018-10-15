@@ -1,5 +1,6 @@
 project.ext["jqaversion"] = "1.4.0"
 project.ext["jqapluginversion"] = "1.4"
+project.ext["jqaclasspaths"] = 'java:classpath::/Users/christian/projects/hibernate-orm/hibernate-core/target/classes/java/main'
 //project.ext["kejqapluginversion"] = "1.3.3"
 
 repositories {
@@ -34,8 +35,8 @@ task(jqascan, dependsOn: 'jqaclean', type: JavaExec) {
     main = 'com.buschmais.jqassistant.commandline.Main'
     args 'scan'
     args '-f'
-//    args 'java:classpath::/Users/christian/projects/hibernate-orm/hibernate-core/target/classes/java/main'
-    args file('classes.txt').readLines()
+    // args 'java:classpath::/Users/christian/projects/hibernate-orm/hibernate-core/target/classes/java/main'
+    args project.jqaclasspaths
 
  //   args 'java:classpath::build/classes/main'
 //    args 'java:classpath::build/classes/test'
